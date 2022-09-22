@@ -7,6 +7,8 @@
 int get_bit_at_pos(unsigned int n, int pos)
 {
   // TODO: Your code here.
+  int value=(n>>pos)&1;
+  return value;
 }
 
 // Flip the bit value (1->0 or 0->1) at position pos of unsigned int n,
@@ -16,6 +18,7 @@ int get_bit_at_pos(unsigned int n, int pos)
 int flip_bit_at_pos(unsigned int n, int pos)
 {
   // TODO: Your code here.
+	
 }
 
 // Return the most significant byte of unsigned int n
