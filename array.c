@@ -13,6 +13,14 @@
 int array_sum(int *arr, int n)
 {
   // TODO: Your code here.
+  int i=0; int sum=0;
+  for(i=0;i<n;i++){
+    sum+= *(arr+i);
+  }
+  
+  return sum;
+  
+  
 }
 
 // Copy the first n elements of array "src" into array "dst".
@@ -21,6 +29,10 @@ int array_sum(int *arr, int n)
 void array_cpy(int *dst, int *src, int n)
 {
   // TODO: Your code here.
+  int i=0;
+  for(i=0;i<n;i++){
+    
+  }
 
 }
 
