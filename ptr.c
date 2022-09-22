@@ -7,6 +7,7 @@
 void incr(int *ptr)
 {
   // TODO: Your code here.
+  (*ptr)++;
 }
 
 // Assign NULL value to the pointer variable pointed to by dp.
@@ -17,6 +18,7 @@ void incr(int *ptr)
 void initialize_ptr(void **dp)
 {
   // TODO: Your code here.
+  *dp=NULL;
 
 }
 
@@ -25,4 +27,7 @@ void initialize_ptr(void **dp)
 void swap_int(int *xp, int *yp)
 {
   // TODO: Your code here.
+  int temp= *xp;
+  *xp=*yp;
+  *yp=temp;
 }
