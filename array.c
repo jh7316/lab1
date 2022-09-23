@@ -31,7 +31,7 @@ void array_cpy(int *dst, int *src, int n)
   // TODO: Your code here.
   int i=0;
   for(i=0;i<n;i++){
-    
+    (*dst+n)=(*src+n);
   }
 
 }
@@ -46,6 +46,15 @@ void array_cpy(int *dst, int *src, int n)
 void bubble_sort(int *arr, int n)
 {
   // TODO: Your code here.
+  int i,j;
+  for(i=0;i<n-1;i++){
+    for(j=0;j<n-1-i;j++){
+      if(arr[j]>arr[j+1]){
+        swap_int(&arr[j], &arr[j+1]);
+      }
+    }
+  }
+  
 }
 
 //arr is a 4 byte array containing an integer in big endian format,
@@ -54,6 +63,7 @@ void bubble_sort(int *arr, int n)
 int big_to_little_endian(char *arr)
 {
   // TODO: Your code here.
+  
 
 }
 
