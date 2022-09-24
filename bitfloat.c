@@ -32,6 +32,16 @@ char get_most_significant_byte(unsigned int n)
 bool sum_overflowed(int n1, int n2)
 {
   // TODO: Your code here.
+ if (n1 >= 0 && n2 >= 0) {
+  if (INT_MAX - n1 <= n2) {
+   return true;
+  }
+ }else if(n1 < 0 && n2 < 0){
+  if (n1 <= INT_MIN - n2) {
+   return true;
+  }
+ }
+ return false;
 }
 
 //Extract the 8-bit exponent field of single precision floating point number f 
@@ -39,6 +49,10 @@ bool sum_overflowed(int n1, int n2)
 unsigned char get_exponent_field(float f) 
 {
 	//TODO: Your code here.
+	unsigned int* r = (unsigned int*) &f;
+	*r=*r<<1;
+	return *((unsigned char*) r +3);
+
 }
 
 //Bonus problem: Return the precision of floating point number f
