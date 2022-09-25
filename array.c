@@ -63,7 +63,7 @@ void bubble_sort(int *arr, int n)
 int big_to_little_endian(char *arr)
 {
   // TODO: Your code here.
-  
-
+  int result= (((*ptr) & 0xFF)<<24)|(((*ptr+1) & 0xFF)<<16)|(((*ptr+2) & 0xFF)<<8)|((*ptr+3) & 0xFF); 
+  return result;
 }
 
