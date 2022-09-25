@@ -69,9 +69,9 @@ int big_to_little_endian(char *arr)
   result[2]=arr[1];
   result[3]=arr[0];
 
-  //converting the char array to integer by creating int pointer 
+  //converting the char array to integer by creating int pointer
   int *ptr = (int *)result;
-  
+
   return  *ptr;
 
 }
