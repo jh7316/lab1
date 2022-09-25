@@ -1,6 +1,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
 
 // Return the bit value (0 or 1) at position pos of unsigned int n
 // Note that the least significant bit position is 0. 
@@ -18,7 +20,7 @@ int get_bit_at_pos(unsigned int n, int pos)
 int flip_bit_at_pos(unsigned int n, int pos)
 {
   // TODO: Your code here.
-    int a = 1<<p;
+    int a = 1<<pos;
     return (n^a);
   	
 }
@@ -35,12 +37,12 @@ return x;
 bool sum_overflowed(int n1, int n2)
 {
   // TODO: Your code here.
- if (n1 >= 0 && n2 >= 0) {
-  if (INT_MAX - n1 <= n2) {
+ if (n1>=0 && n2>=0) {
+  if (INT_MAX-n1<=n2) {
    return true;
   }
- }else if(n1 < 0 && n2 < 0){
-  if (n1 <= INT_MIN - n2) {
+ }else if(n1<0 && n2<0){
+  if (n1<=INT_MIN-n2) {
    return true;
   }
  }
@@ -54,7 +56,7 @@ unsigned char get_exponent_field(float f)
 	//TODO: Your code here.
 	unsigned int* r = (unsigned int*) &f;
 	*r=*r<<1;
-	return *((unsigned char*) r +3);
+	return *((unsigned char*) r+3);
 
 }
 
