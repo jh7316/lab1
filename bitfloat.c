@@ -18,14 +18,17 @@ int get_bit_at_pos(unsigned int n, int pos)
 int flip_bit_at_pos(unsigned int n, int pos)
 {
   // TODO: Your code here.
-	
+    int a = 1<<p;
+    return (n^a);
+  	
 }
 
 // Return the most significant byte of unsigned int n
 char get_most_significant_byte(unsigned int n)
 {
   // TODO: Your code here.
-
+char x = (n>>24)&0xFF;
+return x;
 }
 
 // Return true if n1+n2 causes overflow, return false otherwise
@@ -61,4 +64,5 @@ unsigned char get_exponent_field(float f)
 float get_precision(float f)
 {
   //TODO: Your code here
+	
 }
