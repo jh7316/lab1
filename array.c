@@ -66,7 +66,7 @@ int big_to_little_endian(char *arr)
 {
   // TODO: Your code here.
   //sending arr[3] to arr[0], arr[2] to arr[1], arr[1] to arr[2], arr[0] to arr[3] and combining them using OR operator into one integer value
-  int result= (((*arr+3) & 0xFF)<<24)|(((*arr+2) & 0xFF)<<16)|(((*arr+1) & 0xFF)<<8)|((*arr) & 0xFF);
+  int result= ((*(arr+3) & 0xFF)<<24)|((*(arr+2) & 0xFF)<<16)|((*(arr+1) & 0xFF)<<8)|((*arr) & 0xFF);
   return result;
 }
 
