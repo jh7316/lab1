@@ -19,11 +19,6 @@ int array_sum(int *arr, int n)
   }
   
   return sum;
-<<<<<<< HEAD
-=======
-  
-  
->>>>>>> f971674da5e2c167c0e270757471dc82cb120c07
 }
 
 // Copy the first n elements of array "src" into array "dst".
@@ -36,10 +31,6 @@ void array_cpy(int *dst, int *src, int n)
   for(i=0;i<n;i++){
     dst[i]=src[i];
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> f971674da5e2c167c0e270757471dc82cb120c07
 }
 
 // bubble_sort implements the bubble sort algorithm.
@@ -62,10 +53,6 @@ void bubble_sort(int *arr, int n)
       }
     }
   }
-<<<<<<< HEAD
-=======
-  
->>>>>>> f971674da5e2c167c0e270757471dc82cb120c07
 }
 
 //arr is a 4 byte array containing an integer in big endian format,
@@ -75,7 +62,17 @@ int big_to_little_endian(char *arr)
 {
   // TODO: Your code here.
   //sending arr[3] to arr[0], arr[2] to arr[1], arr[1] to arr[2], arr[0] to arr[3] and combining them using OR operator into one integer value
-  int result= ((*(arr+3) & 0xFF)<<24)|((*(arr+2) & 0xFF)<<16)|((*(arr+1) & 0xFF)<<8)|((*arr) & 0xFF);
-  return result;
+  //int result= ((*(arr+3) & 0xFF)<<24)|((*(arr+2) & 0xFF)<<16)|((*(arr+1) & 0xFF)<<8)|((*arr) & 0xFF);
+  char result[4];
+  result[0]=arr[3];
+  result[1]=arr[2];
+  result[2]=arr[1];
+  result[3]=arr[0];
+
+int *ptr = (int *)result;
+  
+  //int ptr=result[0]+result[1]+result[2]+result[3]; |*(ptr+1)|*(ptr+2)|*(ptr+3);
+  return  *ptr;
+
 }
 
