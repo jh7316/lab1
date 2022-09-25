@@ -31,7 +31,7 @@ void array_cpy(int *dst, int *src, int n)
   // TODO: Your code here.
   int i=0;
   for(i=0;i<n;i++){
-    (*dst+n)=(*src+n);
+    dst[i]=src[i];
   }
 
 }
@@ -63,7 +63,7 @@ void bubble_sort(int *arr, int n)
 int big_to_little_endian(char *arr)
 {
   // TODO: Your code here.
-  int result= (((*ptr) & 0xFF)<<24)|(((*ptr+1) & 0xFF)<<16)|(((*ptr+2) & 0xFF)<<8)|((*ptr+3) & 0xFF); 
+  int result= (((*arr+3) & 0xFF)<<24)|(((*arr+2) & 0xFF)<<16)|(((*arr+1) & 0xFF)<<8)|((*arr) & 0xFF);
   return result;
 }
 
