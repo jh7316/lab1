@@ -61,17 +61,17 @@ void bubble_sort(int *arr, int n)
 int big_to_little_endian(char *arr)
 {
   // TODO: Your code here.
-  //sending arr[3] to arr[0], arr[2] to arr[1], arr[1] to arr[2], arr[0] to arr[3] and combining them using OR operator into one integer value
-  //int result= ((*(arr+3) & 0xFF)<<24)|((*(arr+2) & 0xFF)<<16)|((*(arr+1) & 0xFF)<<8)|((*arr) & 0xFF);
+  // Creating new array called 'result' which is in  big endian format
+  // This is done by assigning arr[3] to result[0], arr[2] to result[1] and so on.
   char result[4];
   result[0]=arr[3];
   result[1]=arr[2];
   result[2]=arr[1];
   result[3]=arr[0];
 
-int *ptr = (int *)result;
+  //converting the char array to integer by creating int pointer 
+  int *ptr = (int *)result;
   
-  //int ptr=result[0]+result[1]+result[2]+result[3]; |*(ptr+1)|*(ptr+2)|*(ptr+3);
   return  *ptr;
 
 }
