@@ -21,6 +21,7 @@ int flip_bit_at_pos(unsigned int n, int pos)
 {
   // TODO: Your code here.
     int a = 1<<pos;
+    //XOR operator with the integer a results in flipping the bit of given position
     return (n^a);
   	
 }
@@ -29,8 +30,9 @@ int flip_bit_at_pos(unsigned int n, int pos)
 char get_most_significant_byte(unsigned int n)
 {
   // TODO: Your code here.
-char x = (n>>24)&0xFF;
-return x;
+ //getting the left-most byte of the number
+ char x = (n>>24)&0xFF;
+ return x;
 }
 
 // Return true if n1+n2 causes overflow, return false otherwise
@@ -38,10 +40,12 @@ bool sum_overflowed(int n1, int n2)
 {
   // TODO: Your code here.
  if (n1>=0 && n2>=0) {
+  //when both integers are positive & they add up to a number higher than the maximum int value, overflow occurs
   if (INT_MAX-n1<=n2) {
    return true;
   }
  }else if(n1<0 && n2<0){
+  ////when both integers are negative & they add up to a number lower than the minimum int value, overflow occurs
   if (n1<=INT_MIN-n2) {
    return true;
   }
@@ -55,8 +59,12 @@ unsigned char get_exponent_field(float f)
 {
 	//TODO: Your code here.
 	unsigned int* r = (unsigned int*) &f;
+	
+	//left-shift by one in order to remove the sign
 	*r=*r<<1;
-	return *((unsigned char*) r+3);
+	
+	//return the third byte from the memory storage
+	return *((unsigned char*)r + 3);
 
 }
 
